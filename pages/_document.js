@@ -12,7 +12,11 @@ class MyDocument extends Document {
         <Head>
           <meta
             http-equiv="Content-Security-Policy"
-            content="default-src 'self'; img-src https://*; child-src 'none';"
+            content="
+                            default-src * data: blob: ws: wss: gap://ready file://*;
+                            style-src * 'unsafe-inline'; 
+                            script-src * 'unsafe-inline' 'unsafe-eval';
+                            connect-src * ws: wss:;"
           />
         </Head>
         <body>
