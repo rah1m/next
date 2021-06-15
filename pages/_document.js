@@ -9,7 +9,12 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'self'; img-src https://*; child-src 'none';"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />
